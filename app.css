@@ -82,8 +82,10 @@ button {
 }
 
 
-.main-nav a:hover {
-  border-color: rgba(0, 0, 0, .1)
+.main-nav a:hover,
+.main-nav .active {
+  color: #fff;
+  background: #3b80d1;
 }
 
 .main-nav a {
@@ -176,32 +178,75 @@ header {
   clear: both;
 }
 
-@media (min-width:0) and (max-width:768px) {
-  body{
-    padding-top: 1em;
+@media (min-width: 0) and (max-width: 768px) { 
+  body {
+    padding-top: .8em;
   }
-  .logo {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding-bottom: 4px
+  .home a {
+    border-color: transparent;
   }
-  .teacher-img{
-    width: 100%;
-    border-radius: 0.5em;
-  }
+   .logo {
+     display: block;
+     width: 100%;
+     text-align: center;
+     padding-bottom: 4px;
+   }
+   .main-nav a {
+     border-top: 2px solid transparent;
+     border-bottom: 2px solid transparent;
+   }
+   .main-nav a:hover {
+     border-color: rgba(0,0,0, .1);
+   }
+   .courses h2 {
+     margin-bottom: 0;
+   }
+   .course-nav {
+     display: block;
+     margin: 1.5em 0 3.2em;
+   }
+   .home a,
+   input,
+   button {
+     display: block;
+     width: 100%;
+     margin-bottom: 1em;
+   }
 }
-
 @media (min-width: 769px) {
   body {
     padding-top: 3em;
+  }
+  .home a {
+    border-color: #3b80d1;
+  }
+  .media img,
+  .media > div,
+  .teacher {
+    float: left;
+  }
+  .media > div {
+    width: 85.1%;
+    margin-left: 1.5em;
+  } 
+  .teacher {
+    width: 48.73%;
+    margin-bottom: 1.5em;
+  }
+  .teacher + .teacher {
+    margin-left: 2.54%;
+  }
+  .teacher:nth-child(2n+3) {
+    clear: left;
+    margin-left: 0;
   }
   .logo {
     margin-right: auto;
     padding: 0 2em;
   }
-  .main-nav,
-  header {
+  header,
+  .main-nav {
+    display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
   }
@@ -211,7 +256,12 @@ header {
     padding: 1.25em 1.5em;
   }
   .main-nav a:hover {
-    border-color: rgba(0, 0, 0, .1)
+    border-color: rgba(0,0,0, .1);
   }
-
+  .course-nav {
+    float: right;
+  } 
+  .courses h2 {
+    float: left;
+  }
 }
