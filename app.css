@@ -71,14 +71,12 @@ button {
   padding: 1em 2em
 }
 
-.home a,
-button,
-input {
-  padding: .5em;
-  font-size: .9em;
+.home a {
+  border-radius: 0.25em;
+  padding: 0.5em;
+  font-size: 0.9em;
   margin-right: 10px;
   border: none;
-  border-radius: 3px;
   border: 1px solid #ccc;
   outline: none
 }
