@@ -231,9 +231,9 @@ class Repos extends React.Component {
 				<div className="course-header group">
 				<h2>COURSES</h2>
 					<ul className="course-nav">
-						<li><a href='#/repos/html'>HTML</a></li>
-						<li><a href='#/repos/css'>CSS</a></li>
-						<li><a href='#/repos/javascript'>JavaScript</a></li>
+						<li><a className={CurrentList == Html ? "active": ""} href='#/repos/html'>HTML</a></li>
+						<li><a className={CurrentList == Css ? "active": ""} href='#/repos/css'>CSS</a></li>
+						<li><a className={CurrentList == Javascript ? "active": ""} href='#/repos/javascript'>JavaScript</a></li>
 					</ul>		
 				</div>
 				<CurrentList />	
@@ -364,16 +364,16 @@ class App extends React.Component {
 							</span>
 							<ul className="main-nav">
 								<li>
-										<a href="#/">Home</a>
+										<a className={Child == Home ? "active": ""} href="#/">Home</a>
 								</li>{' '}
 								<li>
-										<a href="#/about">About</a>
+										<a className={Child == About ? "active": ""} href="#/about">About</a>
 								</li>{' '}
 								<li>
-									<a href="#/teachers">Teachers</a>
+									<a className={Child == Teachers ? "active": ""} href="#/teachers">Teachers</a>
 								</li>{' '}
 								<li>
-									<a href="#/repos">Courses</a>
+									<a className={Child == Repos ? "active": ""} href="#/repos">Courses</a>
 								</li>{' '}
 							</ul>{' '}
             </header>
