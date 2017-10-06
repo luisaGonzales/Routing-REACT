@@ -1,5 +1,5 @@
 "use strict";
-
+// Arrays Necesarios
 const teachers = [
 	{
 	  name: "Angie McAngular",
@@ -174,7 +174,6 @@ const courseJS = [
 	}
 }
 
-
 class About extends React.Component {
 	render() {
 		return (
@@ -242,9 +241,14 @@ class Repos extends React.Component {
 		);
 	}
 }
+
 class Css extends React.Component{
+	constructor(props){
+		super(props)
+		this.listCSS = courseCSS;
+	}
 	render(){
-		let cssList = courseCSS.map((course) => {
+		let cssList = this.listCSS.map((course) => {
 			return (
 			<li className="course media group" key={course.id}>
 			<img className="course-img" src={course.img} />
@@ -263,8 +267,12 @@ class Css extends React.Component{
 }
 
 class Javascript extends React.Component{
+	constructor(props){
+		super(props)
+		this.listJS = courseJS;
+	}
 	render(){
-		let jsList = courseJS.map((course) => {
+		let jsList = this.listJS.map((course) => {
 			return (
 			<li className="course media group" key={course.id}>
 			<img className="course-img" src={course.img} />
@@ -282,10 +290,13 @@ class Javascript extends React.Component{
 	} 
 }
 
-
 class Html extends React.Component{
+	constructor(props){
+		super(props)
+		this.listHTML = courseHTML;
+	}
 	render(){
-		let htmlList = courseHTML.map((course) => {
+		let htmlList = this.listHTML.map((course) => {
 			return (
 			<li className="course media group" key={course.id}>
 			<img className="course-img" src={course.img} />
@@ -298,11 +309,11 @@ class Html extends React.Component{
 		return(
 			<ul>
 				{htmlList}
-			</ul>
-			
+			</ul>	
 		);
 	} 
 }
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -312,10 +323,6 @@ class App extends React.Component {
 	}
 	componentDidMount() {
 		window.addEventListener('hashchange', () => {
-			//<a href="#/about">About</a>
-			//<li><a href='#/repos/html'>HTML</a></li>
-			console.log ( window.location.hash.substr(1) );
-
 			this.setState({
 				route: window.location.hash.substr(1)
 			});
@@ -351,39 +358,30 @@ class App extends React.Component {
 		}
 		return (
          <div>
-            {/* <header>App</header>{' '} */}
             <header>
-			<span className="logo">
-				<i className="material-icons">code</i>
-			</span>
-               <ul className="main-nav">
-					<li>
-						<a href="#/">Home</a>
-					</li>{' '}
-					<li>
-						<a href="#/about">About</a>
-					</li>{' '}
-					<li>
-						<a href="#/teachers">Teachers</a>
-					</li>{' '}
-					<li>
-						<a href="#/repos">Courses</a>
-					</li>{' '}
-
-               </ul>{' '}
+							<span className="logo">
+								<i className="material-icons">code</i>
+							</span>
+							<ul className="main-nav">
+								<li>
+										<a href="#/">Home</a>
+								</li>{' '}
+								<li>
+										<a href="#/about">About</a>
+								</li>{' '}
+								<li>
+									<a href="#/teachers">Teachers</a>
+								</li>{' '}
+								<li>
+									<a href="#/repos">Courses</a>
+								</li>{' '}
+							</ul>{' '}
             </header>
-	         {
-	         	propsForRepos?
-			         <Child route = {propsForRepos} />
-		         :
-			         <Child />
-	         }
+	         {propsForRepos?<Child route = {propsForRepos} />:<Child />}
          </div>
 		);
 	}
 }
 
-
 ReactDOM.render(<App/>,
 	document.getElementById("root"));
-
