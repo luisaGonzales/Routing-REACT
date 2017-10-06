@@ -9,6 +9,11 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+header {
+  background: #edeff0;
+  margin-bottom: 2em
+}
+
 h1,
 h2,
 ul {
@@ -32,6 +37,14 @@ hr {
   border-top: 1px solid rgba(0, 0, 0, .1)
 }
 
+button {
+  color: #fff;
+  background: #4188dc;
+  padding-left: 1em;
+  padding-right: 1em;
+  cursor: pointer;
+  border-color: rgba(0, 0, 0, .1)
+}
 .container {
   width: 95%;
   max-width: 780px;
@@ -93,6 +106,12 @@ li {
   text-align: -webkit-match-parent;
 }
 
+@media (min-width:0) and (max-width:768px) {
+  body{
+    padding-top: 1em;
+  }
+}
+
 @media (min-width: 769px) {
   body {
     padding-top: 3em;
@@ -105,7 +124,14 @@ li {
   header {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+  }
+  .main-nav a {
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    padding: 1.25em 1.5em
+  }
+  .main-nav a:hover {
+    border-color: rgba(0, 0, 0, .1)
   }
 }
