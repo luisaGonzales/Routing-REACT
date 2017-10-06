@@ -230,15 +230,14 @@ class Repos extends React.Component {
 		return (
 			<div className="main-content courses">
 				<div className="course-header group">
-					<h2>REPOS</h2>
+				<h2>COURSES</h2>
 					<ul className="course-nav">
 						<li><a href='#/repos/html'>HTML</a></li>
 						<li><a href='#/repos/css'>CSS</a></li>
 						<li><a href='#/repos/javascript'>JavaScript</a></li>
-					</ul>
-						<CurrentList />				
+					</ul>		
 				</div>
-
+				<CurrentList />	
 			</div>
 		);
 	}
