@@ -2,7 +2,7 @@
 class Home extends React.Component {
 	render() {
 		return (
-			<div className="main-content home">
+			<div className="main-content home ">
 				<h2>HOME</h2>
 				<p>This fun directory is a project for the <em>React Router Basics</em> course on Treehouse.</p>
 				<p>Learn front end web development and much more! This simple directory app offers a preview of our course
@@ -80,7 +80,6 @@ class App extends React.Component {
 			route: window.location.hash.substr(1)
 		};
 	}
-	//  $(document).ready ()
 	componentDidMount() {
 		window.addEventListener('hashchange', () => {
 			//<a href="#/about">About</a>
@@ -118,7 +117,7 @@ class App extends React.Component {
 				Child = Home;
 		}
 		return (
-         <div className="container">
+         <div>
             {/* <header>App</header>{' '} */}
             <header>
 			<span className="logo">

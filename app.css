@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 body {
@@ -21,9 +21,19 @@ ul {
   padding: 0
 }
 
+h2 {
+  color: #404040;
+  font-size: 1.6em;
+  margin-bottom: 1.25em;
+}
+
 ul {
   list-style-type: none
 } 
+
+li {
+  display: list-item;
+}
 
 a {
   text-decoration: none !important;
@@ -54,10 +64,28 @@ button {
   border-radius: .5em;
   box-shadow: 0 3px rgba(0, 0, 0, .1);
   overflow: hidden;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.main-content {
+  padding: 1em 2em
 }
 
-.main-nav a {
-  text-align: center
+.home a,
+button,
+input {
+  padding: .5em;
+  font-size: .9em;
+  margin-right: 10px;
+  border: none;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  outline: none
+}
+
+
+.main-nav a:hover {
+  border-color: rgba(0, 0, 0, .1)
 }
 
 .main-nav a {
@@ -66,7 +94,10 @@ button {
   text-transform: uppercase;
   display: block;
   padding: 1em;
-  transition: .2s
+  transition: .2s;
+  text-align: center;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent
 }
 
 .main-nav .active,
@@ -75,15 +106,14 @@ button {
   background: #3b80d1;
 }
 
-h2 {
-  color: #404040;
-  font-size: 1.6em;
-  margin-bottom: 1.25em
-}
-
 header {
   background: #edeff0;
   margin-bottom: 2em;
+}
+
+.container header{
+  padding-right: 0px !important;
+  padding-left: 0px !important;
 }
 
 .logo {
@@ -97,18 +127,42 @@ header {
   margin-top: 30px;
 }
 
-ul.main-nav {
-  list-style-type: none;
+.courses h2 {
+  margin-bottom: 0
 }
 
-li {
-  display: list-item;
-  text-align: -webkit-match-parent;
+.course-nav li {
+  display: inline-block
+}
+
+.course-nav li+li{
+  margin-left: 0.6em;
+}
+
+.course-nav a {
+  font-size: 0.90em;
+  padding: 0.2em 0.9em;
+  color: #7d7d7d;
+  background-color: #eaebeb;
+  transition: 0.2s;
+  border-radius: 0.25em;  
+}
+
+.course-nav a:hover
+{
+  color: white;
+  background: #39add1;
 }
 
 @media (min-width:0) and (max-width:768px) {
   body{
     padding-top: 1em;
+  }
+  .logo {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 4px
   }
 }
 
@@ -122,14 +176,13 @@ li {
   }
   .main-nav,
   header {
-    display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
   }
   .main-nav a {
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
-    padding: 1.25em 1.5em
+    padding: 1.25em 1.5em;
   }
   .main-nav a:hover {
     border-color: rgba(0, 0, 0, .1)
