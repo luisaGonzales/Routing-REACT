@@ -78,7 +78,7 @@ const courseHTML =[
 	}
 ];
 
-const CSSCourses = [
+const courseCSS = [
 	{
 	  title: "CSS Basics",
 	  description: "CSS (Cascading Style Sheets) is a style sheet language that describes the presentation of web pages. Whereas HTML is what forms the structure of a web page, CSS is what we use to style the HTML with colors, backgrounds, font sizes, layout, and more. As you'll soon learn, CSS is one of the core technologies for designing and building websites.",
@@ -117,7 +117,7 @@ const CSSCourses = [
 	}
 ];
 	
-const JSCourses = [
+const courseJS = [
 	{
 	  title:"JavaScript Basics",
 	  description:"JavaScript is a programming language that drives the web: from front-end user interface design, to backend server-side programming, you'll find JavaScript at every stage of a web site and web application. In this course, you'll learn the fundamental programming concepts and syntax of the JavaScript programming language.",
@@ -175,9 +175,6 @@ const JSCourses = [
 }
 
 
-
-
-
 class About extends React.Component {
 	render() {
 		return (
@@ -214,26 +211,6 @@ class Teachers extends React.Component{
 	}	
 }
 
-// class Html extends React.Component{
-// 	render(){
-// 		let htmlList = courseHTML.map((course) => {
-// 			return(
-// 				<li className="course media group" key={course.id}>
-// 				<img className="course-img" src={course.img} />
-// 				<div>
-// 				  <h3>{course.title}</h3>
-// 				  <p>{course.description}</p>
-// 				</div>
-// 			  </li>
-// 			);
-// 		}); 
-// 		return (
-// 			<ul>
-// 				{htmlList}  
-// 			</ul>  
-// 		);
-// 	} 
-// }
 class Repos extends React.Component {
 	render() {
 		const {route} = this.props;
@@ -241,26 +218,13 @@ class Repos extends React.Component {
 		switch (route) {
 
 			case 'css':
-				CurrentList = ['How to Make a CSS', 'HTML CSS'].map( (item, index) => {
-					return <li key = {index}> {item} </li>
-				});
+				CurrentList = Css;
 				break;
 			case 'javascript':
-				CurrentList = ['How to Make a JS', 'HTML JS'].map( (item, index) => {
-					return <li key = {index}> {item} </li>
-				});
+				CurrentList = Javascript;
 				break;
-			default: //'html'
-				CurrentList = courseHTML.map((course) => {
-					return 
-					<li className="course media group" key={course.id}>
-					<img className="course-img" src={course.img} />
-					<div>
-					  <h3>{course.title}</h3>
-					  <p>{course.description}</p>
-					</div>
-				  </li>
-				});
+			default: 
+				CurrentList = Html
 				break;
 		}
 		return (
@@ -272,18 +236,74 @@ class Repos extends React.Component {
 						<li><a href='#/repos/css'>CSS</a></li>
 						<li><a href='#/repos/javascript'>JavaScript</a></li>
 					</ul>
-
-					<ul>
-						{CurrentList}
-					</ul>
+						<CurrentList />				
 				</div>
 
-				{/* Write routes here... */}
 			</div>
 		);
 	}
 }
+class Css extends React.Component{
+	render(){
+		let cssList = courseCSS.map((course) => {
+			return (
+			<li className="course media group" key={course.id}>
+			<img className="course-img" src={course.img} />
+			<div>
+			  <h3>{course.title}</h3>
+			  <p>{course.description}</p>
+			</div>
+		  </li>
+		)});
+		return(
+			<ul>
+				{cssList}
+			</ul>
+		);
+	} 
+}
 
+class Javascript extends React.Component{
+	render(){
+		let jsList = courseJS.map((course) => {
+			return (
+			<li className="course media group" key={course.id}>
+			<img className="course-img" src={course.img} />
+			<div>
+			  <h3>{course.title}</h3>
+			  <p>{course.description}</p>
+			</div>
+		  </li>
+		)});
+		return(
+			<ul>
+				{jsList}
+			</ul>
+		);
+	} 
+}
+
+
+class Html extends React.Component{
+	render(){
+		let htmlList = courseHTML.map((course) => {
+			return (
+			<li className="course media group" key={course.id}>
+			<img className="course-img" src={course.img} />
+			<div>
+			  <h3>{course.title}</h3>
+			  <p>{course.description}</p>
+			</div>
+		  </li>
+		)});
+		return(
+			<ul>
+				{htmlList}
+			</ul>
+			
+		);
+	} 
+}
 class App extends React.Component {
 	constructor(props) {
 		super(props);
