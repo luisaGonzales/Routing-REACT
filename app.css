@@ -136,6 +136,10 @@ header {
   border-radius: 0.5em;
 }
 
+.course {
+  margin-bottom: 1em;
+}
+
 .courses h2 {
   margin-bottom: 0
 }
@@ -161,6 +165,15 @@ header {
 {
   color: white;
   background: #39add1;
+}
+.course-img {
+  width: 70px;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 @media (min-width:0) and (max-width:768px) {
@@ -200,4 +213,5 @@ header {
   .main-nav a:hover {
     border-color: rgba(0, 0, 0, .1)
   }
+
 }
