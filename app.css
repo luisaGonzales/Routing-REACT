@@ -125,6 +125,17 @@ header {
   margin-top: 30px;
 }
 
+.teacher{
+  float: left;
+  width: 48.73%;
+  margin-bottom: 1.5em;
+}
+
+.teacher-img{
+  width: 97%;
+  border-radius: 0.5em;
+}
+
 .courses h2 {
   margin-bottom: 0
 }
@@ -161,6 +172,10 @@ header {
     width: 100%;
     text-align: center;
     padding-bottom: 4px
+  }
+  .teacher-img{
+    width: 100%;
+    border-radius: 0.5em;
   }
 }
 
