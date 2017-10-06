@@ -126,13 +126,13 @@ class App extends React.Component {
 			</span>
                <ul className="main-nav">
 					<li>
-						<a href="">Home</a>
+						<a href="#/">Home</a>
 					</li>{' '}
 					<li>
 						<a href="#/about">About</a>
 					</li>{' '}
 					<li>
-						<a href="#/repos">Teachers</a>
+						<a href="#/">Teachers</a>
 					</li>{' '}
 					<li>
 						<a href="#/repos">Courses</a>
