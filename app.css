@@ -164,7 +164,8 @@ header {
   border-radius: 0.25em;
 }
 
-.course-nav a:hover {
+.course-nav a:hover,
+.course-nav a.active {
   color: white;
   background: #39add1;
 }
