@@ -236,13 +236,6 @@ header {
     width: 48.73%;
     margin-bottom: 1.5em;
   }
-  .teacher+.teacher {
-    margin-left: 2.54%;
-  }
-  .teacher:nth-child(2n+3) {
-    clear: left;
-    margin-left: 0;
-  }
   .logo {
     margin-right: auto;
     padding: 0 2em;
