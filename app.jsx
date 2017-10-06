@@ -1,4 +1,44 @@
 "use strict";
+
+const teachers = [
+	{
+	  name: "Angie McAngular",
+	  description: "Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!",
+	  img: "img/angie.png",
+	  id: "1"
+	},
+	{
+	  name: "NodeStradamus",
+	  description: "'NodeStra' is a software engineer and philosopher trying to leave the world better than he found it. He codes for non-profits, eCommerce, and large-scale web apps.",
+	  img: "img/nodestradamus.png",
+	  id: "2"
+	},
+	{
+	  name: "Geo 'Lo' Cation",
+	  description: "Geo is a JavaScript developer working on large-scale applications. He's also a teacher who strives to support students in removing all barriers to learning code.",
+	  img: "img/geo.png",
+	  id: "3"
+	},
+	{
+	  name: "Ecma Scriptnstuff",
+	  description: "Ecma found her passion for computers and programming over 15 years ago. She is excited to introduce people to the wonderful world of JavaScript.",
+	  img: "img/ecma.png",
+	  id: "4"
+	},
+	{
+	  name: "Jay Query",
+	  description: "Jay is a developer, author of CSS: The Missing Manual, JavaScript & jQuery: The Missing Manual, and web development teacher.",
+	  img: "img/jay.png",
+	  id: "5"
+	},
+	{
+	  name: "Json Babel",
+	  description: "All of his professional life, Json has worked with computers online; he is a polyglot programmer and likes using the right tools for the job.",
+	  img: "img/json.png",
+	  id: "6"
+	}
+];
+
 class Home extends React.Component {
 	render() {
 		return (
@@ -28,6 +68,29 @@ class About extends React.Component {
 			</div>
 		);
 	}
+}
+
+class Teachers extends React.Component{
+	render(){
+		let teachersList = teachers.map((teacher) => {
+			return (
+			<li className="teacher" key={teacher.id} >
+				<img className="teacher-img" src={teacher.img} alt="teacher" />
+				<h3>{teacher.name}</h3>
+				<p>{teacher.description}</p>
+			</li>
+			);
+		}); 
+		
+		return (
+			<div className="main-content">
+			<h2>Teachers</h2>
+			<ul className="group">
+				{teachersList}    
+			</ul>
+			</div>
+		);
+	}	
 }
 
 class Repos extends React.Component {
@@ -101,6 +164,9 @@ class App extends React.Component {
 			case '/repos':
 				Child = Repos;
 				break;
+			case '/teachers':
+				Child = Teachers;
+				break;
 			case '/repos/html':
 				Child = Repos;
 				propsForRepos = 'html';
@@ -131,7 +197,7 @@ class App extends React.Component {
 						<a href="#/about">About</a>
 					</li>{' '}
 					<li>
-						<a href="#/">Teachers</a>
+						<a href="#/teachers">Teachers</a>
 					</li>{' '}
 					<li>
 						<a href="#/repos">Courses</a>
